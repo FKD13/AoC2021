@@ -15,7 +15,7 @@ process([_ | Rest], [equal | Result]) :- !, process(Rest, Result).
 main :- 
     parse('input/day01_1.txt', nums, Numbers),
     process(Numbers, Result),
-    include([X]>>(X = increased), Result, Filtered),
+    include(=(increased), Result, Filtered),
     length(Filtered, Count),
     write(Count), nl,
     halt.
